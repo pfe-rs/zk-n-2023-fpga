@@ -1,0 +1,19 @@
+## Quartus
+# Quartus generated files
+*.qws
+*.hex
+*.bak
+db/
+incremental_db/
+simulation/
+output_files/
+# Has tmp in the name so i assume its safe to ignore
+greybox_tmp/
+*.qdf
+*.rpt
+*.htm
+*.summary
+*.pin
+*.sof
+*.done
+*.cdf
