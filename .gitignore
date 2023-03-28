@@ -17,3 +17,7 @@ greybox_tmp/
 *.sof
 *.done
 *.cdf
+c5_pin_model_dump.txt
+*.smsg
+*.jdi
+*.sld
