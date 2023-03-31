@@ -1,0 +1,11 @@
+D:\c#\projekat UART\projekat UART\bin\Debug\projekat UART.exe.config
+D:\c#\projekat UART\projekat UART\bin\Debug\projekat UART.exe
+D:\c#\projekat UART\projekat UART\bin\Debug\projekat UART.pdb
+D:\c#\projekat UART\projekat UART\obj\Debug\projekat UART.csproj.AssemblyReference.cache
+D:\c#\projekat UART\projekat UART\obj\Debug\projekat UART.csproj.SuggestedBindingRedirects.cache
+D:\c#\projekat UART\projekat UART\obj\Debug\projekat_UART.Properties.Resources.resources
+D:\c#\projekat UART\projekat UART\obj\Debug\projekat UART.csproj.GenerateResource.cache
+D:\c#\projekat UART\projekat UART\obj\Debug\projekat UART.csproj.CoreCompileInputs.cache
+D:\c#\projekat UART\projekat UART\obj\Debug\projekat UART.exe
+D:\c#\projekat UART\projekat UART\obj\Debug\projekat UART.pdb
+D:\c#\projekat UART\projekat UART\obj\Debug\projekat_UART.Form1.resources
