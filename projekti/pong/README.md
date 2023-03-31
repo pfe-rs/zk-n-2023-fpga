@@ -8,7 +8,7 @@
 Pong je jedna od najstarijih arkadnih igrica, inspirisana stonim
 tenisom. Igrači kontrolišu “rekete” koji se pomeraju vertikalno duž
 ivica terena i prosleđuju loptu jedan drugom. Kad igrač ne uspe da vrati
-loptu, njegov protivnik osvaja poen. Prvi igrač koji osvoji 11 poena
+loptu, njegov protivnik osvaja poen. Prvi igrač koji osvoji 3 poena
 pobeđuje. Cilj projekta je napraviti ovakvu igricu na FPGA razvojnoj
 ploči.
 
