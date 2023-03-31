@@ -1,7 +1,7 @@
 
 
 // ############
-// pong samo sa inbuilt tasterima reworkovan unazad iz pong_tastatura, ne testirano *ali* bi trebalo da radi 
+// pong samo sa inbuilt tasterima reworkovan unazad iz pong_tastatura posto nemamo ranije kopije, nije testirano *ali* bi trebalo da radi 
 // ############
 
 module projekat(
@@ -21,7 +21,6 @@ module projekat(
 
 	//  GPIO za matrix
 	output			  [15:0]		GPIO_0
-	// preskacemo 9
 );
 
 
@@ -30,14 +29,13 @@ module projekat(
 //  REG/WIRE declarations
 //=======================================================
 
-wire [32:0] sekunda;
-
-//=======================================================
-//  Structural coding
-//=======================================================
+	wire [32:0] sekunda;
 
 	wire [7:0] r;
 	wire [7:0] k;
+	
+	// mapiranje u sledecim redovima interno povezuje pinove sa njihovim stvarnim vrednostima kolona/redova
+	// za lakse povezivanje led matrice na plocu
 	
 	//redovi, pozitivni, mozda increment
 	assign GPIO_0[8]  = r[0];
@@ -78,14 +76,19 @@ wire [32:0] sekunda;
 	assign r = sve[15:8];
 	assign k = sve[7:0];
 	wire first;
-	one_sec sek(CLOCK_50, sekunda);
+
+//=======================================================
+//  Structural coding
+//=======================================================
+	
+	one_sec sek(CLOCK_50, sekunda); // clock od koga zavisi brzina igre
 	multipleks mp(CLOCK_50, sve[15:0], x,y); // multipleksiranje izlaza na displej 
 	
 	keys dugmici(sekunda, pom1, pom2, KEY[3:0], game, first, game2); // key handler za dugmice koji kontrolisu
 	rand rnd(CLOCK_50,KEY[0],smer); // lfsr za nasumican pocetni smer, moguce su samo dve opcije posto ukoliko lopta krene ukoso moze da dovede odma do deadlock situacije gde lopta samo odskace iz coska u cosak
 	
-	ball bl(sekunda, smer, x_b, y_b, pom1, pom2, poeni1, poeni2, game, first, game2);
-	red_sweep rd(CLOCK_50, pom1, pom2, x, y, x_b, y_b);
+	ball bl(sekunda, smer, x_b, y_b, pom1, pom2, poeni1, poeni2, game, first, game2); // logika lopte i igre vecinski
+	red_sweep rd(CLOCK_50, pom1, pom2, x, y, x_b, y_b); // iteruje kroz sva polja koja treba da se upale i prosledjuje ih jedno po jedno multiplekseru
 
 	// sedmo-segmentni displeji za ispis poena i oznacavanje pobednika/gubitnika
 	hex hex1(poeni1, HEX0[6:0]);
