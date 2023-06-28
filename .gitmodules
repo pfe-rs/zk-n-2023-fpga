@@ -1,0 +1,3 @@
+[submodule "projekti/vu-metar"]
+	path = projekti/vu-metar
+	url = https://github.com/tadijansimic/VUmetarPFE.git
